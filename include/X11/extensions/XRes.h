@@ -1,7 +1,7 @@
 /*
    Copyright (c) 2002  XFree86 Inc
 */
-/* $XFree86: xc/include/extensions/XRes.h,v 1.4 2003/12/18 05:48:06 dawes Exp $ */
+/* $XFree86$ */
 
 #ifndef _XRES_H
 #define _XRES_H
