@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: XRes
+Description: X Resource Information Extension Library
+Version: @VERSION@
+Cflags: -I${includedir} @RESOURCEEXT_CFLAGS@ @XRES_CFLAGS@
+Libs: -L${libdir} -lXRes @RESOURCEEXT_LIBS@ @XRES_LIBS@
