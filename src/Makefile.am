@@ -5,6 +5,8 @@ libXRes_la_SOURCES =    \
 
 libXRes_la_LIBADD = @RESOURCE_EXT_LIBS@ @XRES_LIBS@
 
+INCLUDES = -I$(top_srcdir)/include
+
 #
 # Library version info.  Check the libtool docs for
 # instructions on when and how to change this value
