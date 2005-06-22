@@ -3,7 +3,9 @@ lib_LTLIBRARIES = libXRes.la
 libXRes_la_SOURCES =    \
         XRes.c
 
-libXRes_la_LIBADD = @RESOURCE_EXT_LIBS@ @XRES_LIBS@
+libXRes_la_LIBADD = @RESOURCEEXT_LIBS@ @XRES_LIBS@
+
+libXRes_la_CFLAGS = @RESOURCEEXT_CFLAGS@
 
 INCLUDES = -I$(top_srcdir)/include
 

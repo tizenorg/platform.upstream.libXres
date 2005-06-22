@@ -44,6 +44,8 @@ AC_PROG_LIBTOOL
 # get modules
 PKG_CHECK_MODULES(XRES, x11 xext)
 
+AC_SUBST(XRES_LIBS)
+
 # Check xres configuration, strip extra digits from package version to
 # find the required protocol version
 
@@ -51,6 +53,7 @@ RES_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 PKG_CHECK_MODULES(RESOURCEEXT, resourceproto >= $RES_VERSION)
 
 AC_SUBST(RESOURCEEXT_CFLAGS)
+AC_SUBST(RESOURCEEXT_LIBS)
 
 if test "x$GCC" = "xyes"; then
 	GCC_WARNINGS="-Wall -Wpointer-arith -Wstrict-prototypes \

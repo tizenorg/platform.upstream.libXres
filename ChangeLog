@@ -1,3 +1,10 @@
+2005-06-22  Theo van Klaveren  <t.vanklaveren@student.utwente.nl>
+
+	Fix make distcheck.
+
+	* configure.ac: Also subst RESOURCEEXT_LIBS and XRES_LIBS.
+	* src/Makefile.am: Add missing CFLAGS substitution.
+
 2004-05-10  Eric Anholt  <anholt@FreeBSD.org>
 
 	* Makefile.am:
