@@ -13,7 +13,7 @@ INCLUDES = -I$(top_srcdir)/include
 # Library version info.  Check the libtool docs for
 # instructions on when and how to change this value
 #
-libXRes_la_LDFLAGS = -version-info 0:0:0
+libXRes_la_LDFLAGS = -version-info 1:0:0
 
 libXResincludedir = $(includedir)/X11/extensions
 libXResinclude_HEADERS = $(top_srcdir)/include/X11/extensions/XRes.h
