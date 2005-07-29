@@ -32,7 +32,7 @@ dnl try to keep these the same.  Note that the library has an extra
 dnl digit in the version number to track changes which don't affect the
 dnl protocol, so XRes version l.n.m corresponds to protocol version l.n
 dnl
-AC_INIT(libXres, 1.0.2, [keithp@keithp.com], libXres)
+AC_INIT(libXres, 0.99.0, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXres)
 AC_CONFIG_AUX_DIR(.)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_CONFIG_HEADER(config.h)
@@ -61,6 +61,8 @@ if test "x$GCC" = "xyes"; then
 	-Wnested-externs -fno-strict-aliasing"
 	CFLAGS="$GCC_WARNINGS $CFLAGS"
 fi
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile
 	   src/Makefile
