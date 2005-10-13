@@ -62,6 +62,7 @@ if test "x$GCC" = "xyes"; then
 	CFLAGS="$GCC_WARNINGS $CFLAGS"
 fi
 
+XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile
