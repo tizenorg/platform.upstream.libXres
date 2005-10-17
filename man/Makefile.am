@@ -29,7 +29,7 @@ libmandir = $(mandir)/man$(LIB_MAN_SUFFIX)
 
 libman_SOURCES = XRes.man
 
-BUILT_SOURCES = .shadows.DONE
+BUILT_SOURCES = shadows.DONE
 
 EXTRA_DIST = $(libman_SOURCES)
 
@@ -66,7 +66,7 @@ XRes_shadows =                              \
     XResQueryClientResources                \
     XResQueryClientPixmapBytes
 
-.shadows.DONE:
+shadows.DONE:
 	-rm -f $(XRes_shadows:=.$(LIB_MAN_SUFFIX))
 	(for i in $(XRes_shadows:=.$(LIB_MAN_SUFFIX)) ; do \
 	 echo .so man$(LIB_MAN_SUFFIX)/XRes.$(LIB_MAN_SUFFIX) > $$i; \
