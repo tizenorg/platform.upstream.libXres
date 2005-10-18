@@ -35,8 +35,8 @@ EXTRA_DIST = $(libman_SOURCES)
 
 CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
 
-libman_DATA = $(libman_SOURCES:man=$(LIB_MAN_SUFFIX)) \
-	      $(XRes_shadows:=.$(LIB_MAN_SUFFIX))
+libman_DATA = $(libman_SOURCES:man=@LIB_MAN_SUFFIX@) \
+	      $(XRes_shadows:=.@LIB_MAN_SUFFIX@)
 
 SED = sed
 
@@ -67,7 +67,7 @@ XRes_shadows =                              \
     XResQueryClientPixmapBytes
 
 shadows.DONE:
-	-rm -f $(XRes_shadows:=.$(LIB_MAN_SUFFIX))
-	(for i in $(XRes_shadows:=.$(LIB_MAN_SUFFIX)) ; do \
+	-rm -f $(XRes_shadows:=.@LIB_MAN_SUFFIX@)
+	(for i in $(XRes_shadows:=.@LIB_MAN_SUFFIX@) ; do \
 	 echo .so man$(LIB_MAN_SUFFIX)/XRes.$(LIB_MAN_SUFFIX) > $$i; \
 	 done)
