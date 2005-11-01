@@ -44,6 +44,7 @@ AC_PROG_LIBTOOL
 # get modules
 PKG_CHECK_MODULES(XRES, x11 xext)
 
+AC_SUBST(XRES_CFLAGS)
 AC_SUBST(XRES_LIBS)
 
 # Check xres configuration, strip extra digits from package version to
