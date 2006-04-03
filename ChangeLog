@@ -1,3 +1,8 @@
+2006-04-03  Adam Jackson  <ajax@freedesktop.org>
+
+	* src/Makefile.am:
+	Bug #6407: Cygwin build fix.  (Yaakov Selkowitz)
+
 2006-02-12  Alan Coopersmith  <alan.coopersmith@sun.com>
 
 	* man/Makefile.am: 
