@@ -31,3 +31,10 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xres.pc
 
 EXTRA_DIST = xres.pc.in autogen.sh
+
+.PHONY: ChangeLog
+
+ChangeLog:
+	GIT_DIR=${srcdir}/.git git-log --name-only > ChangeLog
+
+dist-hook: ChangeLog
