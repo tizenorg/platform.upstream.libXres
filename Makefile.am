@@ -30,11 +30,10 @@ AM_CFLAGS = $(RESOURCEEXT_CFLAGS) $(XRES_CFLAGS)
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xres.pc
 
-EXTRA_DIST = xres.pc.in autogen.sh
+EXTRA_DIST = xres.pc.in autogen.sh ChangeLog
 
-.PHONY: ChangeLog
+CLEANFILES = ChangeLog
 
-ChangeLog:
-	GIT_DIR=${srcdir}/.git git-log --name-only > ChangeLog
-
-dist-hook: ChangeLog
+ChangeLog: FORCE
+	git-log > ChangeLog
+FORCE: ChangeLog
