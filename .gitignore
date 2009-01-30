@@ -1,3 +1,5 @@
+.deps
+.libs
 aclocal.m4
 autom4te.cache
 compile
@@ -20,3 +22,10 @@ mkinstalldirs
 stamp-h1
 xres.pc
 *~
+*.3
+*.o
+*.la
+*.lo
+libXres-*.tar.*
+ChangeLog
+tags
