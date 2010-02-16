@@ -54,9 +54,6 @@ XORG_DEFAULT_OPTIONS
 # find the required protocol version
 RES_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 PKG_CHECK_MODULES(XRES, x11 xext xextproto [resourceproto >= $RES_VERSION])
-XRES_CFLAGS="$CWARNFLAGS $XRES_CFLAGS"
-AC_SUBST(XRES_CFLAGS)
-AC_SUBST(XRES_LIBS)
 
 XORG_CHECK_MALLOC_ZERO
 
