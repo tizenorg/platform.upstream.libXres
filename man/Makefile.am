@@ -23,34 +23,24 @@
 
 libmandir = $(LIB_MAN_DIR)
 
-LIB_MAN_DIR_SUFFIX = $(LIB_MAN_DIR:@mandir@/man%=%)
+libman_PRE =				\
+	XRes.man			\
+	$(XRes_shadows:=.man)
 
-libman_PRE = XRes.man
+XRes_shadows =				\
+	XResQueryExtension		\
+	XResQueryVersion		\
+	XResQueryClients		\
+	XResQueryClientResources	\
+	XResQueryClientPixmapBytes
 
 EXTRA_DIST = $(libman_PRE)
+CLEANFILES = $(libman_DATA)
 
-CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
-
-libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@) \
-	      $(XRes_shadowmen)
+libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@)
 
 SUFFIXES = .$(LIB_MAN_SUFFIX) .man
 
 # String replacements in MAN_SUBSTS now come from xorg-macros.m4 via configure
 .man.$(LIB_MAN_SUFFIX):
 	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
-
-# Generate man page shadow files (Replaces InstallManPageAliases from Imake)
-
-XRes_shadows =                              \
-    XResQueryExtension                      \
-    XResQueryVersion                        \
-    XResQueryClients                        \
-    XResQueryClientResources                \
-    XResQueryClientPixmapBytes
-
-XRes_shadowmen = $(XRes_shadows:=.@LIB_MAN_SUFFIX@)
-
-$(XRes_shadowmen):
-	$(AM_V_GEN) echo .so man$(LIB_MAN_DIR_SUFFIX)/XRes.$(LIB_MAN_SUFFIX) > $@
-
