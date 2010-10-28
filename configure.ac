@@ -30,7 +30,8 @@ dnl try to keep these the same.  Note that the library has an extra
 dnl digit in the version number to track changes which don't affect the
 dnl protocol, so XRes version l.n.m corresponds to protocol version l.n
 dnl
-AC_INIT(libXres, 1.0.4, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXres)
+AC_INIT([libXres], [1.0.5],
+        [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], [libXres])
 AC_CONFIG_AUX_DIR(.)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
