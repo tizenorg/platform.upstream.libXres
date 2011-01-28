@@ -32,7 +32,6 @@ dnl protocol, so XRes version l.n.m corresponds to protocol version l.n
 dnl
 AC_INIT([libXres], [1.0.5],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], [libXres])
-AC_CONFIG_AUX_DIR(.)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
