@@ -4,7 +4,7 @@ Release:        1
 License:        MIT
 Summary:        X-Resource extension client library
 Url:            http://www.x.org
-Group:          System Environment/Libraries
+Group:          Graphics/X Window System
 Source0:        %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(resourceproto)
 BuildRequires:  pkgconfig(xext)
