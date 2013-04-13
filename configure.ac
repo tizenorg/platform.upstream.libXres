@@ -55,6 +55,12 @@ RES_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 # Obtain compiler/linker options for depedencies
 PKG_CHECK_MODULES(XRES, x11 xext xextproto [resourceproto >= $RES_VERSION])
 
+# Check for _XEatDataWords function that may be patched into older Xlib release
+SAVE_LIBS="$LIBS"
+LIBS="$XRES_LIBS"
+AC_CHECK_FUNCS([_XEatDataWords])
+LIBS="$SAVE_LIBS"
+
 AC_CONFIG_FILES([Makefile
 		src/Makefile
 		man/Makefile
