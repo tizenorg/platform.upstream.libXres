@@ -6,6 +6,7 @@ Summary:        X-Resource extension client library
 Url:            http://www.x.org
 Group:          Graphics/X Window System
 Source0:        %{name}-%{version}.tar.bz2
+Source1001: 	libXres.manifest
 BuildRequires:  pkgconfig(resourceproto)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xorg-macros)
@@ -25,6 +26,7 @@ X.Org X11 libXres development package
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure
@@ -40,12 +42,14 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libXRes.so.1
 %{_libdir}/libXRes.so.1.0.0
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_includedir}/X11/extensions/XRes.h
 %{_libdir}/libXRes.so
