@@ -29,7 +29,7 @@ X.Org X11 libXres development package
 cp %{SOURCE1001} .
 
 %build
-%configure
+%configure --disable-static
 make %{?_smp_mflags}
 
 %install
