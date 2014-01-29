@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXres
 Version:        1.0.6
 Release:        1
@@ -11,6 +13,10 @@ BuildRequires:  pkgconfig(resourceproto)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 X-Resource is an extension that allows a client to query
