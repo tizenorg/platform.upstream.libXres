@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXres
-Version:        1.0.6
+Version:        1.0.7
 Release:        1
 License:        MIT
 Summary:        X-Resource extension client library
@@ -35,7 +35,7 @@ X.Org X11 libXres development package
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-static
+%autogen --disable-static
 make %{?_smp_mflags}
 
 %install
